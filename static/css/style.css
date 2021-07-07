@@ -429,4 +429,26 @@ body {
       padding:0px;
   }
   }
-  /*End Contact Page*/  
+  /*End Contact Page*/
+  
+  
+/*PROFILE PAGE*/
+.profile-header {
+    margin-top: 80px;
+    align-items: center;
+    text-align: center;
+}
+.add-recipe {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    align-items: center;
+    text-align: center;
+}
+/*media query*/
+@media screen and (max-width: 500px) {
+    .add-recipe {
+        margin-top: 30px;
+        margin-bottom: 30px;
+}
+}
+/*END PROFILE PAGE*/  
