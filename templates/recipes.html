@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container-fluid container-wrapper">
+    <!--Hero Image Section-->
+    <section id="home-image">
+        <div class="row">
+            <div class="col-12 landing-text">
+                <h2>My Cook Book</h2>
+            </div>
+            <!--Search Box-->
+            <div class="col-12">
+                <form class="search-box" action="{{ url_for('search') }}" method="post">
+                    <input type="text" placeholder="Search Recipe.." name="query" id="query">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
