@@ -89,7 +89,34 @@ def login():
         else:
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
-    return render_template("users/login.html")    
+    return render_template("users/login.html")
+
+
+# Profile
+@app.route("/profile", methods=["GET", "POST"])
+def mypage():
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    if session["user"]:
+        if session["user"] == ADMIN_USER:
+            user_recipes = list(mongo.db.recipes.find())
+        else:
+            user_recipes = list(
+                mongo.db.recipes.find({"username": session["user"]}))
+        return render_template(
+            "users/mypage.html", username=username, user_recipes=user_recipes)
+    return redirect(url_for("login"))
+
+
+# Logout
+@app.route("/logout")
+def logout():
+    """Remove user from session cookie"""
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))        
 
 
 # App Run
