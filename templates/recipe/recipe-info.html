@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container-fluid img-fluid">
+    <!--Page Heading-->
+    <div class="recipe-text">
+        <h2 class="recipe-header">Recipe Description</h2>
+    </div>
+    <!--Recipe Description-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h6>Category: {{recipes.recipe_category}}</h6>
+                <h6>Recipe : {{recipes.recipe_name}}</h6>
+                <h6>Calories : {{recipes.calories}}</h6>
+                <h6>Carbs : {{recipes.carbs}}</h6>
+                <h6>Protein : {{recipes.protein}}</h6>
+                <h6>Fat : {{recipes.fat}}</h6>
+                <h6>Serves : {{recipes.servings}}</h6>
+                <h6>Prep Time : {{recipes.prep_time}}</h6>
+                <h6>Cook Time : {{recipes.cook_time}}</h6>
+                <br>
+                <h6>Ingredients: {{recipes.ingredients}}</h6>
+                <br>
+                <h6>Method: {{recipes.method}}</h6>
+            </div>
+            <div class="col-sm-8">
+                <img class="recipes-desc-img" src="{{recipes.image_link}}" alt="{{recipes.recipes_name}}">
+            </div>
+        </div>
+        
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
