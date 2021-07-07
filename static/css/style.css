@@ -542,4 +542,20 @@ a {
 a:hover {
     color: #000;
 }
-/*End Link*/  
+/*End Link*/
+
+
+/*Modal Box*/
+.modal-box {
+    margin-top:150px;
+}
+.modal-text {
+    color : black;
+    font-size: 25px;
+}
+@media screen and (max-width: 500px) {
+    .modal-text {
+        font-size: 15px;
+    }
+}
+/*End Modal Box*/
