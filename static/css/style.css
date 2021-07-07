@@ -451,4 +451,16 @@ body {
         margin-bottom: 30px;
 }
 }
-/*END PROFILE PAGE*/  
+/*END PROFILE PAGE*/
+
+
+/*Add/Edit Recipe Page*/
+.add-box {
+    background-color: #f5f5ea;
+    padding: 2rem 1rem;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    color: #131315;
+  }
+  /*End Add/Edit Recipe Page*/
