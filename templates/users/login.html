@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container-fluid container-login img-fluid">
+    <div class="row ">
+        <div class="col-12">
+            <section class="callout login-box text-center">
+                <h2>Sign In!</h2>
+                <form method="POST" action="{{ url_for('login') }}">
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <input type="email" name="username" class="form-control" id="inputEmail3"
+                                placeholder="Email Address" required />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <input type="password" name="password" class="form-control" id="inputPassword3"
+                                placeholder="Password" required />
+                        </div>
+                    </div> 
+                    <div class="form-group row"> 
+                        <div class="col-sm-12">
+                            <a class="forgot-pass" href="#">Forgot Password?</a>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-brown">Sign In!</button>
+                        </div>
+                    </div>
+                    <div>
+                        <span><small>Not registered yet! </small></span><span><a href="{{url_for ('signup') }}">
+                                Sign Up!
+                            </a></span>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
