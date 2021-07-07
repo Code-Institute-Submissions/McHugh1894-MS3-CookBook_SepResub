@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 recipe-text">
+            <h2 class="recipe-header">403 - Not autorized </h2>
+            <h4 class="recipe-header">Sorry, you don’t have the necessary permissions to access the wanted page.</h4>
+            <h4 class="recipe-header"><a href="{{ url_for('home') }}">Go to homepage</a></h4>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
