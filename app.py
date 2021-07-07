@@ -116,7 +116,26 @@ def logout():
     """Remove user from session cookie"""
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("login"))        
+    return redirect(url_for("login"))
+
+
+# Contact Page
+@app.route("/contact")
+def contact():
+    return render_template("users/contact.html")
+
+
+# Recipes Description
+@app.route("/recipes/<recipe_id>/view")
+def recipes(recipe_id):
+    try:
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        if not recipe:
+            return render_template("error_handlers/404.html")
+        print(recipe)
+        return render_template("recipe/recipe-info.html", recipes=recipe)
+    except:
+        return render_template("error_handlers/404.html")
 
 
 # App Run
