@@ -51,3 +51,10 @@ def search():
     return render_template("recipe/recipe.html", recipes=recipes)
 
 
+# App Run
+if __name__ == "__main__":
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=True)
+
+
