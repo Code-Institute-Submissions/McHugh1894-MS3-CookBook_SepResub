@@ -464,3 +464,18 @@ body {
     color: #131315;
   }
   /*End Add/Edit Recipe Page*/
+
+
+/*Categories*/
+.card_category {
+    background-color: #f5f5ea;
+    color: brown;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.title_category {
+    align-items: center;
+    text-align: center;
+}
+/* End Categories*/  
