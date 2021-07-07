@@ -358,4 +358,42 @@ body {
     justify-content: center;
     position: relative;
   }
-  /*End Sign up Page*/  
+  /*End Sign up Page*/
+  
+
+/*Contact Page*/
+.message-container {
+    background: url("../images/hero-image.jpg") no-repeat bottom right;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    display: flex;
+    height: 100vh;
+    object-fit: cover;
+    justify-content: center;
+    position: relative;
+  }
+  .message-box {
+    background-color: rgb(221,209,191);
+    padding: 2rem 1rem;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    min-width: 300px;
+    color: #131315;
+  }
+  .subscribe-box {
+    background-color: rgb(221,209,191);
+    padding: 2rem 1rem;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    min-width: 300px;
+    color: #131315;
+  }
+  .header-form {
+      font-size:20px;
+  }  
