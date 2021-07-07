@@ -17,3 +17,30 @@
             </div>
         </div>
     </section>
+
+    <!--Section To Display All Recipes-->
+    <section>
+        <div class="recipe-text">
+            <h2 class="recipe-header">Recipes</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                {% for recipe in recipes %}
+                <div class="col-12 col-md-6 col-lg-4 recipe-read" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;">
+                    <img class="recipe-img" src="{{ recipe.image_link }}" alt="{{ recipe.recipe_name }}">
+                    <div class="recipe-title">
+                        <h5 class="card-title">{{recipe.recipe_name}}</h5>
+                    <hr>
+                    <p class="card-text">{{recipe.cook_time}}</p>
+                        <a href="{{ url_for('recipes', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a>
+                    </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!--Back to top button-->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top<i class="fa fa-arrow-up"></i></button>
+</div>
+
+{% endblock %}
