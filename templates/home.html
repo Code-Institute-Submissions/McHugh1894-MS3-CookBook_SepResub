@@ -55,3 +55,65 @@
         </div>
         <!--Navbar-->
     </header>
+
+     <!-- Hero Image -->
+     <div class="hero-image" >
+            
+    </div>
+    <div class="jumbotron">
+        <!-- heading -->
+        <h1 class="heading">Welcome<br/></h1>
+        <!-- enter button to access website -->
+        <img id="gif" alt="gif" src="https://media.giphy.com/media/3IQ0wimBnJ9SccyJpS/giphy.gif" />
+        <div class="mainsite-button">
+            <a href="{{url_for('recipe')}}" class="button btn btn-success btn-lg">Enter</a>
+        </div>
+    </div>
+    {% endblock %}
+    <!--Footer-->
+<footer class="footer footer-div mt-auto container-fluid">
+    <div id="footer-details" class="row">
+        <!--Copyright-->
+        <div class="col-sm-6">
+            <h5 class="uppercase general-sub"> <i class="fa fa-copyright list-inline-item"
+                    aria-hidden="true"></i> 2021</h5>
+        </div>
+        <!--Social Links-->
+        <div class="col-sm-6">
+            <ul class="list-inline social-links">
+                <li class="list-inline-item">
+                    <a target="_blank" rel="noopener" href="https://www.facebook.com">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <span class="sr-only">Facebook</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a target="_blank" rel="noopener" href="https://www.twitter.com">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        <span class="sr-only">Twitter</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a target="_blank" rel="noopener" href="https://www.instagram.com">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <span class="sr-only">Instagram</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a target="_blank" rel="noopener" href="https://www.youtube.com">
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                        <span class="sr-only">YouTube</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!--footer-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+</body>
+</html>
