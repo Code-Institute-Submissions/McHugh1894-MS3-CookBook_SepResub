@@ -214,7 +214,44 @@ def get_categories():
     if is_user_admin():
         return render_template("error_handlers/403.html")
     categories = list(mongo.db.recipes.find().sort("category_name", 1))
-    return render_template("category/categories.html", categories=categories)        
+    return render_template("category/categories.html", categories=categories) 
+
+
+
+# Add Category to DB
+@app.route("/category/add", methods=["GET", "POST"])
+def add_category():
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.insert_one(category)
+        flash("New Category Added")
+        return redirect(url_for("get_categories"))
+    return render_template("category/add_category.html")
+
+
+# Edit Category from DB
+@app.route("/category/<category_id>/edit", methods=["GET", "POST"])
+def edit_category(category_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        flash("Category Successfully Updated")
+        return redirect(url_for("get_categories"))
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("category/edit_category.html", category=category)
+
+
+# Delete Category from DB
+@app.route("/category/<category_id>/delete")
+def delete_category(category_id):
+    mongo.db.categories.remove({"_id": ObjectId(category_id)})
+    flash("Category Successfully Deleted")
+    return redirect(url_for("get_categories"))
+
 
 
 # App Run
