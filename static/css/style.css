@@ -478,4 +478,30 @@ body {
     align-items: center;
     text-align: center;
 }
-/* End Categories*/  
+/* End Categories*/
+
+
+/*Buttons*/
+.btn-brown {
+    background-color: brown;
+    color: #ffffff;
+    width: 90px;
+    margin:10px;
+}
+.btn-crud-recipe {
+    padding-top: 70px;
+    padding-bottom: 30px;
+    margin:10px;
+    background-color: brown;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+}
+@media screen and (max-width: 500px) {
+    .btn-crud-recipe {
+    font-size: 15px;  
+}
+}
+/*End Buttons*/
