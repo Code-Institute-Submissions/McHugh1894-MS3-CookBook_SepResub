@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <!--Page Heading-->
+            <section class="callout add-box text-center">
+                <h2>Edit Category!!</h2>
+                <form method="POST" action="{{ url_for('edit_category',category_id=category._id) }}">
+                    <!-- category name -->
+                    <div class="row">
+                        <div class="input-field col-sm-12">
+                            <input id="category_name" name="category_name" value="{{category.category_name}}"
+                                type="text" class="validate" required>
+                            <label for="category_name">Category Name</label>
+                        </div>
+                    </div>
+                    <!-- submit button -->
+                    <div class="row">
+                        <div class="col s12 center-align">
+                            <button type="submit" class="btn btn-brown">
+                                Update
+                            </button>
+                            <a class="btn btn-brown" href="{{ url_for('get_categories', username=session['user']) }}">
+                                Cancel</a>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
