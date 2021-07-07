@@ -305,3 +305,39 @@ body {
     margin-bottom: 20px;
   }
 /* End Recipe Description Page*/
+
+/* Sign In Page*/
+.container-login {
+    background: url("../images/hero-image.jpg") no-repeat bottom left;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    display: flex;
+    height: 100vh;
+    object-fit: cover;
+    justify-content: center;
+    position: relative;
+  }
+  .login-box {
+    background-color: rgb(221,209,191);
+    padding: 2rem 1rem;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    min-width: 300px;
+    color: #131315;
+  }
+  .forgot-pass {
+    color: #131315;
+    align-items: center;
+    text-align: right;
+  }
+  @media screen and (max-width: 500px) {
+      .login-box {
+          min-width: 250px;
+    }
+  }
+  /*End Sign In page*/
