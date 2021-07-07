@@ -23,9 +23,30 @@ message.
 """
 
 
-# Hero Image
+# Home Page
 @app.route('/')
 @app.route('/home')
 def home():
     is_logged_in = True if 'username' in session else False    
     return render_template('home.html', is_logged_in=is_logged_in)
+
+# Recipes Page
+@app.route("/recipes")
+def recipe():
+    category = request.args.get("category")
+    recipes = []
+    if category: 
+        recipes = list(mongo.db.recipes.find({"recipe_category":category}))
+    else:
+        recipes = list(mongo.db.recipes.find())
+    return render_template("recipes.html", recipes=recipes)
+
+
+# Search Recipe
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("recipe/recipe.html", recipes=recipes)
+
+
