@@ -532,4 +532,14 @@ body {
     padding: 10px;
     }
   }
-  /*End Back to Top Button for home page*/  
+  /*End Back to Top Button for home page*/
+  
+  
+/*Link*/
+a {
+    color: brown;
+}
+a:hover {
+    color: #000;
+}
+/*End Link*/  
