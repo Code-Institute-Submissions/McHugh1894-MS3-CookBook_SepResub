@@ -525,3 +525,11 @@ body {
   #myBtn:hover {
     background-color: #f5f5ea;
   }
+
+/*media query*/
+@media screen and (max-width: 500px) {
+    #myBtn {
+    padding: 10px;
+    }
+  }
+  /*End Back to Top Button for home page*/  
