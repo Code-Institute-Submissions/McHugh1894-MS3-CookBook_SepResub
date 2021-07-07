@@ -30,6 +30,7 @@ def home():
     is_logged_in = True if 'username' in session else False    
     return render_template('home.html', is_logged_in=is_logged_in)
 
+
 # Recipes Page
 @app.route("/recipes")
 def recipe():
