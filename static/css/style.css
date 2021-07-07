@@ -1,0 +1,11 @@
+/*Body*/
+body {
+    font-family: 'Times New Roman', Times, serif, ;
+  }
+  /*End Body*/
+  
+  /*Content*/
+  .page-content{
+      min-height: calc(100vh - 56px);
+  }
+  /*End Content*/
