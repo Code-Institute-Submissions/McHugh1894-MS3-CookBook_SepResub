@@ -341,3 +341,21 @@ body {
     }
   }
   /*End Sign In page*/
+
+
+/*Sign Up Page*/
+.container-signup {
+    background: url("../images/hero-image.jpg") no-repeat bottom right;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    display: flex;
+    height: 100vh;
+    object-fit: cover;
+    justify-content: center;
+    position: relative;
+  }
+  /*End Sign up Page*/  
