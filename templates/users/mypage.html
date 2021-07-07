@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container container-fluid">
+    <!--Page Heading-->
+    <div class="row">
+        <div class="col-12 profile-header">
+            <h2>My Page!</h2>
+        </div>
+    </div>
+    <!--Add Recipe Button-->
+    <div class="row">
+        <div class="col-12 add-recipe">
+            <a class="btn-crud-recipe" href="{{ url_for('add_recipe') }}">Add new recipe +</a>
+        </div>
+    </div>
+    <!--Display User Recipe-->
+    <section>
+        <div class="row ">
+            <div class="col-12">
+                <h3 class="recipe-header">Recipes</h3>
+            </div>
+        </div>
+        <div class="row">
+            {% for recipe in user_recipes %}
+            <div class="col-12 col-md-6 col-lg-4 recipe-read">
+                <img class="recipe-img" src="{{ recipe.image }}" alt="{{ recipe.recipe_name }}">
+                <div class="recipe-title">
+                    <a href="{{ url_for('recipes', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a>
+                </div>
+                <div class="add-recipe">
+                    <a class="btn-crud-recipe" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit
+                    </a>
+                    <a class="btn-crud-recipe" href="#delete-modal-{{recipe._id}}" data-target="#delete-modal-{{recipe._id}}" data-toggle="modal">Delete
+                    </a>
+                    <div id="delete-modal-{{recipe._id}}" class="modal">
+                        <div class="modal-dialog modal-box">
+                            <div class="modal-content">
+                                <!--Modal Text-->
+                                <div class="modal-body">
+                                    <h5 class="modal-text">Are you sure you want to delete this recipe?</h5>
+                                </div>
+                                <!--Modal Buttons-->
+                                <div class="modal-footer">
+                                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-brown">Delete</a>
+                                    <a href="{{ url_for('mypage', username=session['user']) }}" class="btn-brown">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+
+{% endblock %}
