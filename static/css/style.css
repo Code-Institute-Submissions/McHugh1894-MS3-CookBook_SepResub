@@ -190,4 +190,49 @@ body {
     h2 {
        font-size:20px; 
     }
-  }  
+  } 
+  
+
+/*Search Box**/
+.search-box {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    width: 70%;
+    background: #f5f5ea;
+    margin:auto;   
+}
+.search-box input {
+    min-width: 400px;
+    height: 40px;
+}
+.search-box button {
+  float: right;
+  width: 10%;
+  padding: 10px;
+  background: brown;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+  height:40px;
+}
+.search-box button:hover {
+    background-color: #000;
+}
+/*Media Query For Search Box*/
+@media screen and (max-width: 768px) {
+  .search-box {
+    padding: 2px;
+    font-size: 10px;
+    width: 80%; 
+   }
+   .search-box input {
+    min-width: 200px;
+   }
+   .search-box button {
+    width:10%;
+    font-size: 15px;
+   }
+}  
