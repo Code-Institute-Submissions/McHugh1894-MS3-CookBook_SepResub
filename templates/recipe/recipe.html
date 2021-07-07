@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container-fluid">
+    <!--Page Heading-->
+    <div class="recipe-text">
+        <h2 class="recipe-header">Recipes</h2>
+    </div>
+    <!--Recipe List By Category-->
+    <div class="container">
+        {% if recipes|length > 0 %}
+        <div class="row">
+            {% for recipe in recipes %}
+            <div class="col-12 col-md-6 col-lg-4 recipe-read">
+                <img class="recipe-img" src="{{ recipe.image_link }}" alt="{{ recipe.recipe_name }}">
+                <div class="recipe-title">
+                    <a href="{{ url_for('recipes', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a>
+                </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="recipe-text">
+            <h2 class="recipe-header">No Result, try something else!</h2>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
