@@ -253,6 +253,23 @@ def delete_category(category_id):
     return redirect(url_for("get_categories"))
 
 
+ # Subscribe Newsletter
+@app.route("/newsletter", methods=["GET", "POST"])
+def newsletter():
+    if request.method == "POST":
+        existing_user = mongo.db.newsletter.find_one(
+            {"email_id": request.form.get("email_id").lower()})
+        if existing_user:
+            flash("Already Subscribed")
+            return redirect(url_for("contact"))
+        newsletter = {
+            "email_id": request.form.get("email_id").lower(),
+        }
+        flash("Successfully subscribed")
+        mongo.db.newsletter.insert_one(newsletter)
+    return render_template("users/contact.html")   
+
+
 
 # App Run
 if __name__ == "__main__":
