@@ -194,6 +194,29 @@ def edit_recipe(recipe_id):
         "recipe/edit_recipe.html", recipe=recipe, categories=categories)
 
 
+# Delete Recipe From DB
+@app.route("/=recipe/<recipe_id>/delete")
+def delete_recipe(recipe_id):
+    # Fetch recipe and check if it exists, if recipe doesn't exist, throw some error, else proceed
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Recipe Successfully Deleted")
+    return redirect(url_for("mypage"))
+def is_user_admin():
+    if not session.get("user") == "admin@gmail.com":
+        return False
+    else:
+        return True
+
+
+# Get Category from DB
+@app.route("/categories")
+def get_categories():
+    if is_user_admin():
+        return render_template("error_handlers/403.html")
+    categories = list(mongo.db.recipes.find().sort("category_name", 1))
+    return render_template("category/categories.html", categories=categories)        
+
+
 # App Run
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
