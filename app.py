@@ -34,9 +34,9 @@ def home():
 # Recipes Page
 @app.route("/recipes")
 def recipe():
-    category = request.args.get("category")
-    recipes = []
-    if category: 
+    category = request.args.get("categories")
+    recipes=[]
+    if category and category != "All": 
         recipes = list(mongo.db.recipes.find({"recipe_category":category}))
     else:
         recipes = list(mongo.db.recipes.find())
@@ -161,7 +161,8 @@ def add_recipe():
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe is successfully added")
         return redirect(url_for("mypage", username=session['user']))
-    categories = mongo.db.categories.find().sort("category_name", 1)
+    categories = list(mongo.db.recipe_categories.find())
+    
     return render_template(
         "recipe/add_recipe.html", categories=categories)
 
@@ -213,8 +214,8 @@ def is_user_admin():
 def get_categories():
     if is_user_admin():
         return render_template("error_handlers/403.html")
-    categories = list(mongo.db.recipes.find().sort("category_name", 1))
-    return render_template("category/categories.html", categories=categories) 
+    categories = list(mongo.db.recipe_categories.find())
+    return render_template("category/categories.html", categories=categories)
 
 
 
@@ -225,7 +226,7 @@ def add_category():
         category = {
             "category_name": request.form.get("category_name")
         }
-        mongo.db.categories.insert_one(category)
+        mongo.db.recipe_categories.insert_one(category)
         flash("New Category Added")
         return redirect(url_for("get_categories"))
     return render_template("category/add_category.html")
@@ -238,17 +239,17 @@ def edit_category(category_id):
         submit = {
             "category_name": request.form.get("category_name")
         }
-        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        mongo.db.recipe_categories.update({"_id": ObjectId(category_id)}, submit)
         flash("Category Successfully Updated")
         return redirect(url_for("get_categories"))
-    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    category = mongo.db.recipe_categories.find_one({"_id": ObjectId(category_id)})
     return render_template("category/edit_category.html", category=category)
 
 
 # Delete Category from DB
 @app.route("/category/<category_id>/delete")
 def delete_category(category_id):
-    mongo.db.categories.remove({"_id": ObjectId(category_id)})
+    mongo.db.recipe_categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
 

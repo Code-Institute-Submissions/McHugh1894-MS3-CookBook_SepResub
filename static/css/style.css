@@ -40,8 +40,9 @@ body {
     text-decoration: underline;
   }
   .dropdown-bg {
-      background-color:#003750;
+      background-color:#003750;    
   }
+
   .navbar-dark .navbar-nav .show>.nav-link {
     color: #ffffff;
   }
@@ -76,9 +77,12 @@ body {
   }
 
 #card {
-    width:  100px;
-    height: 100px;
     object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 100px;
 }  
 
 .card-right {
@@ -94,7 +98,10 @@ body {
   }
 
 #card-right {
-    width:  100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
     height: 100px;
     object-fit: cover;
 }  
