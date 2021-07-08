@@ -26,9 +26,26 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-right mr-2">
-                            <a class="nav-link" href="{{url_for('recipe')}}">Recipes</a>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href=""
+                                id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Category
+                            </a>
+                            <!--Category Dropdown List-->
+                            <div class="dropdown-menu dropdown-bg" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item nav-link"
+                                    href="{{ url_for('recipe', categories='All') }}">All</a>
+                                <a class="dropdown-item nav-link"
+                                    href="{{ url_for('recipe', categories='Breakfast') }}">Breakfast</a>
+                                <a class="dropdown-item nav-link"
+                                    href="{{ url_for('recipe', categories='Lunch') }}">Lunch</a>
+                                <a class="dropdown-item nav-link"
+                                    href="{{ url_for('recipe', categories='Dinner') }}">Dinner</a>
+                                <a class="dropdown-item nav-link"
+                                    href="{{ url_for('recipe', categories='Snacks') }}">Snacks</a>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="{{url_for ('contact') }}">Contact</a>
@@ -53,8 +70,11 @@
                 </div>
             </nav>
         </div>
+        
         <!--Navbar-->
     </header>
+
+    
 
      <!-- Hero Image -->
      <div class="hero-image" >
@@ -64,8 +84,11 @@
               <h4><b>Banana & Blueberry Smoothie</b></h4>
               <p>Cook Time - 2 mins</p>
             </div>
+            
           </div> 
     </div>
+
+    
     <div class="jumbotron">
         <!-- heading -->
         <h1 class="heading">Welcome<br/></h1>
@@ -75,6 +98,14 @@
             <a href="{{url_for('recipe')}}" class="button btn btn-success btn-lg">Enter</a>
         </div>
     </div>
+
+    <div class="card-right">
+        <img src="https://fitfoodiefinds.com/wp-content/uploads/2019/05/blueberry-smoothie-683x1024.jpg" alt="Avatar" style="width:50%">
+        <div class="container">
+          <h4><b>Banana & Blueberry Smoothie</b></h4>
+          <p>Cook Time - 2 mins</p>
+        </div>
+    
     
     {% endblock %}
 
