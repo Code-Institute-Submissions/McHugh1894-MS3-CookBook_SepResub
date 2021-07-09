@@ -117,41 +117,6 @@ body {
     padding: 2px 16px;
   }
 
-.jumbotron {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.jumbotron h1 {
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 3rem;
-    font-family: "Montserrat";
-    text-align: center;
-}
-
-.mainsite-button {
-    text-align: center;
-}
-
-.mainsite-button a {
-    color: #ffffff;
-    margin-top: 10px;
-    font-size: 22px;
-}
-
-#gif {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
 .hero-image {
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/hero-image.jpg);
