@@ -285,6 +285,7 @@ body {
     height: 300px;
     object-fit: cover;
     align-items: center;
+    padding-top: 10px;
   }
 .recipe-title {
     color: black;

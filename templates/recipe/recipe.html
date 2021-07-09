@@ -6,6 +6,14 @@
     <div class="recipe-text">
         <h2 class="recipe-header">Recipes</h2>
     </div>
+
+    <div class="col-12">
+        <form class="search-box" action="{{ url_for('search') }}" method="post">
+            <input type="text" placeholder="Search Recipe.." name="query" id="query">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div>
     <!--Recipe List By Category-->
     <div class="container">
         {% if recipes|length > 0 %}

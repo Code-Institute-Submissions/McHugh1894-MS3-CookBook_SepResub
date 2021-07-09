@@ -84,7 +84,10 @@
                         </li>
                         {% if session.user %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url_for ('mypage') }}">My Page</a>
+                            <a class="nav-link" href="{{url_for ('mypage') }}">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for ('add_recipe') }}">Add Recipe</a>
                         </li>
                         {% if session.user|lower == "admin@gmail.com"|lower %}
                         <li class="nav-item">
