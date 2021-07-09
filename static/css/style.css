@@ -275,6 +275,7 @@ body {
 .recipe-read {
   text-align: justify;
   margin-top: 50px;
+  margin-bottom: 50px;
   align-items: center;
   border-radius: 20px;
 }
