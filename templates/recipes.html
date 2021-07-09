@@ -24,9 +24,9 @@
             <h2 class="recipe-header">Recipes</h2>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row" style="justify-content: space-between;">
                 {% for recipe in recipes %}
-                <div class="col-12 col-md-6 col-lg-4 recipe-read" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;">
+                <div class="col-12 col-md-6 col-lg-3 recipe-read" style="box-shadow: rgba(0, 0, 0, 35%) 0px 5px 15px;">
                     <img class="recipe-img" src="{{ recipe.image_link }}" alt="{{ recipe.recipe_name }}">
                     <div class="recipe-title">
                         <h5 class="card-title">{{recipe.recipe_name}}</h5>
