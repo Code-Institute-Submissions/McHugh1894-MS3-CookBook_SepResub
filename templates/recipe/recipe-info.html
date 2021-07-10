@@ -6,29 +6,26 @@
     <div class="recipe-text">
         <h2 class="recipe-header">Recipe Description</h2>
     </div>
-    <!--Recipe Description-->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <h6>Category: {{recipes.recipe_category}}</h6>
-                <h6>Recipe : {{recipes.recipe_name}}</h6>
-                <h6>Calories : {{recipes.calories}}</h6>
-                <h6>Carbs : {{recipes.carbs}}</h6>
-                <h6>Protein : {{recipes.protein}}</h6>
-                <h6>Fat : {{recipes.fat}}</h6>
-                <h6>Serves : {{recipes.servings}}</h6>
-                <h6>Prep Time : {{recipes.prep_time}}</h6>
-                <h6>Cook Time : {{recipes.cook_time}}</h6>
-                <br>
-                <h6>Ingredients: {{recipes.ingredients}}</h6>
-                <br>
-                <h6>Method: {{recipes.method}}</h6>
-            </div>
-            <div class="col-sm-8">
+    <div class="row">
+    <div class="col-sm-8" style="display: block; text-align: center;">
                 <img class="recipes-desc-img" style="vertical-align: middle;
                 border-style: none;
-                width: 100%;" src="{{recipes.image_link}}" alt="{{recipes.recipes_name}}">
+                width: 75%;" src="{{recipes.image_link}}" alt="{{recipes.recipes_name}}">
+    </div>
+    <div class="col-sm-4" style="text-align: right; padding-right: 4%;">
+                    <h6>Category: {{recipes.recipe_category}}</h6>
+                    <h6>Recipe : {{recipes.recipe_name}}</h6>
+                    <h6>Calories : {{recipes.calories}}</h6>
+                    <h6>Carbs : {{recipes.carbs}}</h6>
+                    <h6>Protein : {{recipes.protein}}</h6>
+                    <h6>Fat : {{recipes.fat}}</h6>
+                    <h6>Serves : {{recipes.servings}}</h6>
+                    <h6>Prep Time : {{recipes.prep_time}}</h6>
+                    <h6>Cook Time : {{recipes.cook_time}}</h6>
+    
+                </div>
             </div>
+            
         </div>
         
 
