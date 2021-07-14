@@ -79,14 +79,20 @@
      <!-- Hero Image -->
      <div class="hero-image" >
         
-        <div class="row" style="justify-content: space-between;">
-            <div class="card" style="box-shadow: rgba(0, 0, 0, 35%) 0px 5px 15px;">
-                <img id="card" src="static/images/Banana-blueberry-smoothie.jpg" alt="card" style="width:50%">
-                <div class="container">
-                  <h4><b>Banana & Blueberry Smoothie</b></h4>
-                  <p>Cook Time - 2 mins</p>
-                </div>
-                </div> 
+        <div class="container">
+            <h2>Featured Recipes</h2>
+            <div class="row" style="justify-content: space-between;">
+                {% for recipe in recipes %}
+                <div class="col-12 col-md-6 col-lg-3 recipe-read" style="box-shadow: rgba(0, 0, 0, 35%) 0px 5px 15px;">
+                    <img class="recipe-img" src="{{ recipe.image_link }}" alt="{{ recipe.recipe_name }}">
+                    <div class="recipe-title">
+                        <h5 class="card-title">{{recipe.recipe_name}}</h5>
+                    <hr>
+                    <p class="card-text">{{recipe.cook_time}}</p>
+                        <a href="{{ url_for('recipes', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a>
+                    </div>
+                    </div>
+                {% endfor %}
                 <div class="card">
                     <img id="card" src="static/images/Banana-blueberry-smoothie.jpg" alt="card" style="width:50%">
                     <div class="container">

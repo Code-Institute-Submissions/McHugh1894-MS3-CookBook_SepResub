@@ -1,8 +1,10 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<img src="static/images/readme-images/homepage-logo.png">
 
-Welcome McHugh1894,
+## Description
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+this is a fictional recipe book website created for my milestone project 3.
+
+A modern styled website for a fictional recipe book that is fully equipped and standards with added classes and long opening hours. It's hope is to attract new members through an easy to use website.
 
 ## Gitpod Reminders
 
