@@ -195,5 +195,47 @@ This site also has a feature to create your own account and post recipes.
 
 Placeholder text ----
 
+## Deployment
 
+- ### Working with the local copy
+  1. Install all the requirements: Go to the workspace of your local copy. In the terminal window of your IDE type: pip3 install -r requirements.txt.
+  2. Create a database in MongoDB
+     - Signup or login to your MongoDB account.
+     - Create a cluster and a database.
+     - Create five collections in the db: categories, recipes, feedback, newsletter, users.
+     - Add string values for the collections. See my database section how the database is set up for this project.
+  3. Create the environment variables
+     - Create a .gitignore file in the root directory of the project.
+     - Add the env.py file in the .gitignore.
+     - Create the file env.py. This will contain all the envornment variables.
+        - Import os
+        - os.environ.setdefault("IP", "Added by developer")
+        - os.environ.setdefault("PORT", "Added by developer")
+        - os.environ.setdefault("SECRET_KEY", "Added by developer")
+        - os.environ.setdefault("MONGO_URI", "Added by developer")
+        - os.environ.setdefault("MONGO_DBNAME", "Added by developer")
+  4. Run the app: Open your terminal window in your IDE. Type python3 app.py and run the app.
+  
+- ### Heroku Deployment
+  1. Set up local workspace for Heroku
+     - In terminal window of your IDE type: pip3 freeze -- local > requirements.txt. (The file is needed for Heroku to know which file to install.)
+     - In terminal window of your IDE type: python app.py > Procfile (The file is needed for Heroku to know which file is needed as entry point.)
+  2. Set up Heroku: create a Heroku account and create a new app and select your region.
+  3. Deployment method 'Github'
+     - Click on the Connect to GitHub section in the deploy tab in Heroku.
+       - Search your repository to connect with it.
+       - When your repository appears click on connect to connect your repository with the Heroku.
+     - Go to the settings app in Heroku and go to Config Vars. Click on Reveal Config Vars.
+       - Enter the variables contained in your env.py file. it is about: IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME
+  4. Push the requirements.txt and Procfile to repository.
+     - $ git add requirements.txt
+     - $ git commit -m "Add requirements.txt"
+     - $ git add Procfile 
+     - $ git commit -m "Add Procfile"
+  5. Automatic deployment: Go to the deploy tab in Heroku and scroll down to Automatic deployments. Click on Enable Automatic Deploys. By Manual deploy click on Deploy Branch.
+
+  Heroku will receive the code from Github and host the app using the required packages. Click on Open app in the right corner of your Heroku account. The app wil open and the live link is available from the address bar. 
+
+### Media :
+- Images used were taken from [UnSplash website](https://unsplash.com/) and [Davey Nutrition](https://www.daveynutrition.com/)
 
