@@ -6,99 +6,194 @@ this is a fictional recipe book website created for my milestone project 3.
 
 A modern styled website for a fictional recipe book that is fully equipped and standards with added classes and long opening hours. It's hope is to attract new members through an easy to use website.
 
-## Gitpod Reminders
+## Table of Contents
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+[User Experience (UX)](#UX)
 
-`python3 -m http.server`
+[Features](#features)
 
-A blue button should appear to click: _Make Public_,
+[Design](#design)
 
-Another blue button should appear to click: _Open Browser_.
+[Technologies Used](#technologies)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+[Testing](#testing)
 
-A blue button should appear to click: _Make Public_,
+[Deployment](#deployment)
 
-Another blue button should appear to click: _Open Browser_.
+[Known Bugs](#bugs)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+[Credits](#credits)
 
-To log into the Heroku toolbelt CLI:
+<a name="UX"></a>
+## User Experience (UX)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### User Stories
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+This website gives information about different recipes with cooking methods posted by the website owner and other users. 
+It is perfect for anyone with an interest in food and cooking.
+In this website they get the information about numerous recipes based on categories.
+This site also has a feature to create your own account and post recipes.
 
-------
+- #### Generic User
+    1. I want the user to easily understand the purpose layout of the site without additional instructions needed.
+    1. I want the user to intuitively navigate through the site to browse the content.
+    1. I want the site to be responsive on all devices.
+    1. I want to use the navigation at all times and have it readily available so I can quickly navigate from one page to another.
 
-## Release History
+- ####  Admin/Site Owner
+    1. As a site owner I want to read all the recipes.
+    1. As a site owner I want to add, edit and delete my recipes.
+    1. As a site owner I can delete other recipes from my site but  I can not edit whatever I want.
+    1. As a site owner I want to manage the categories of recipes. I want to add, edit and delete the categories.
+    1. As a site owner I want to recieve the feedback of users.
+    
+- #### User who wants to view recipe
+    1. I want to check the recipe without logging in or signing up to the site.
+    1. I want to get recipe by search option.
+    1. I want to contact the site owner by sending message without login or sign up.
+    1. I want to request the site owner for newsletter without login or sign up.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- #### User who wants to post recipe
+    1. I want to create a profile by signing up.
+    1. I want to easliy login and check my page.
+    1. I want to add new recipe on my page and available to all users of site.
+    1. I want to edit and delete my recipe only.
+    1. I want to contact the site owner by sending a simple message.
+    1. I want to request a newsletter.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Design
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Defensive Design
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- #### The user is not able to break the site by clicking on buttons.
+- #### The add and edit recipe form:
+    - The category has to be chosen.
+    - The image URL must start with https://.
+    - The servings, preparation time, cook time and total time has to be numbered.
+- #### A recipe or category can't be deleted with just one click. 
+    If the user clicks on the delete button, there wil be a modal with a confirmation message.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Features
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Existing Features
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- #### Common Features Across All Pages
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+    - Header allows user to easily navigate across all pages
+      - The header itself is positioned to always be visible (positioned absolutely using Bootstrap 'fixed-top' class) at the top of the screen (mobile and desktop) which allows visitors to find it quickly.
+      - The brand logo is positioned on the left and is visible on all pages.
+      - Navigation is included in the header to let the user intuitively locate it.
+      - Navigation links are more visible when hovered over. This lets the visitor know that it is clickable.
+      - Navigation links collapse in a home menu when viewed on mobile device.
+    
+    - Accessibility
+      - All Pages have a description in case the image link breaks as well as helps screen readers.
+      - The home menu has aria-label added to let users with screen readers know where the toggleable menu is.
+    
+    - Buttons/Links
+      - All buttons are styled in the way to provide consistency across the page.
+      - All links have a hover effect.
+      - All external links open in a new tab to allow the user to easily navigate back to the page. 
+    
+    - Flash messages
+      - Messages displayed at the top of the page to provide the user confirmation of actions like sign out, adding or editing recipes etc.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+    - Responsiveness
+      - All Pages are responsive on different viewport size.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+    - Footer
+      - Footer has been designed to be at the bottom of the page, regardless of the amount of content. This aids the overall user experience.
+      - All content has been spaced out and aligned to the center.
+      - There are social links and when hovered over, it changes the color.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Specific to Pages
+- Home Page
+  - This page has a header, footer and two sections. Featured recipes and popular recipes.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- Recipes Page
+    - This page has a header, footer and search box. This page also has a list of all recipes with names and images.The header has a navigation bar and  the footer has copyright and social links.The image brings the user's attention and inviting the user to explore the website.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- Contact Page
+    - This page contains a form where users can give feedback and ask questions. It has another form where users can request for newsletter by simply subscribe it. 
 
-------
+- Login Page 
+    - This page has a login form. After logging in the user will reach on his page.
 
-## FAQ about the uptime script
+- Sign Up Page
+    - This page has a sign up form. After sign up a profile page will be created where users can add recipes.
 
-**Why have you added this script?**
+- Profile Page 
+    - This page consists of all recipes of  the respective user.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- Category Page
+    - Only admin can access this page. In this page admin can manage categories.
 
-**How will this affect me?**
+- Recipe Description Page
+    - This page displays recipe description of selected recipe.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Future Features
+  - Create a way for the user to rate the website without having to type up feedback.
+  - A reviews page.    
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+<a name="technologies"></a>
+## Technologies Used
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Languages Used
 
-**So….?**
+  - [HTML5](https://en.wikipedia.org/wiki/HTML5)
+  - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+  - [JavaScript](https://en.wikipedia.org/wiki/Javascript)
+  - [Jquery](https://en.wikipedia.org/wiki/JQuery)
+  - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Frameworks, Libraries and Programs Used
 
-**Can I opt out?**
+  - [Bootstrap v4.5.0](https://getbootstrap.com/) - Used for the responsive layout as well as custom components such as header, footer, images, icons, grids, cards, and collapse element.
+  - [Font Awesome](https://fontawesome.com/) - Font Awesome is used to add social icons for socila links.
+  - [Google Fonts](https://fonts.google.com/) - Google Fonts is used to import 'Expo' and 'Cinzel'.
+  - [Git](https://git-scm.com/) - Git is used to allow for tracking of any changes in the code and for the version control.
+  - [GitPod](https://www.gitpod.io/) - GitPod, connected to GitHub, hosted the coding space and allowed the project to be committed to the Github repository.
+  - [Github](https://github.com/) - GitHub is used to host the project files and publish the live website by using Git Pages.
+  - [Heroku](https://www.heroku.com/) - Heroku is the cloud platform to deploying the app.
+  - [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Flask is the web framework for the app.
+  - [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) - Jinja is used for Python template.
+  - [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) - Werkzeug is used for password hashing and authentication and autohorization.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### Database
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+  - [MongoDB](https://www.mongodb.com/) - MongoDB is the fully managed cloud database service used for the project.
 
-**Anything more?**
+  ## Testing
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### Functionality Testing
+  - #### Navigation bar
+     - The navigation bar stays at the top of the page on all screen sizes.
+            - When the nav links clicks it opens the relevent page in same window with same header footer.
+  - #### Footer
+     - Footer is located at the bottom of the page regardless of the content amount.
+     - When the social links are clicked, they open the relevant social media page in a new tab.
+  
+  - All external links is tested to make sure they open up the correct pages in new tabs.
+  - All internal links is tested to make sure that all pages are correctly connected.
 
----
+### Error Testing
 
-Happy coding!
+* [W3C HTML Validator](https://validator.w3.org/) - ALL HTML pages passed with no errors after corrections made.
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - CSS style sheet passed with no errors.
+* [JavaScript Validator](https://jshint.com/) - No error found but warning.
+* [Python Validator](http://pep8online.com/) - Pass
+
+
+### Compatibility Testing
+  - #### Browser Compatibility
+    - Tested on Chrome, Firefox, Opera, Microsoft Edge, Safari.
+  - #### OS Compatibility
+    - Tested on iOS , Android 10 and Windows 10.
+  - #### Tested for responsivness on [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools). 
+
+### Speed Testing
+
+Placeholder text ----
+
+
+
