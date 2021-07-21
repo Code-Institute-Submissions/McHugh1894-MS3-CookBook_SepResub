@@ -200,6 +200,8 @@ This site also has a feature to create your own account and post recipes.
 
 I chose to run all my pages through [GT Metrix - Speed test](https://gtmetrix.com//) to get a view of the page load speeds.
 
+<img src="static/images/readme-images/homepage-performance.png">
+
 <img src="static/images/readme-images/contact-page-performance.png">
 
 <img src="static/images/readme-images/login-page-performance.png">
