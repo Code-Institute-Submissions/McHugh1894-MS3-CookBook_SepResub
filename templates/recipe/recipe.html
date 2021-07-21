@@ -1,5 +1,4 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <div class="container-fluid">
     <!--Page Heading-->
@@ -9,31 +8,29 @@
 
     <div class="col-12">
         <form class="search-box" action="{{ url_for('search') }}" method="post">
-            <input type="text" placeholder="Search Recipe.." name="query" id="query">
+            <input type="text" placeholder="Search Recipe.." name="query" id="query" />
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
 </div>
-    <!--Recipe List By Category-->
-    <div class="container">
-        {% if recipes|length > 0 %}
-        <div class="row" style="justify-content: space-between;">
-            {% for recipe in recipes %}
-            <div class="col-12 col-md-6 col-lg-3 recipe-read" style="box-shadow: rgba(0, 0, 0, 35%) 0px 5px 15px;">
-                <img class="recipe-img" src="{{ recipe.image_link }}" alt="{{ recipe.recipe_name }}">
-                <div class="recipe-title">
-                    <a href="{{ url_for('recipes', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a>
-                </div>
-                
+<!--Recipe List By Category-->
+<div class="container">
+    {% if recipes|length > 0 %}
+    <div class="row" style="justify-content: space-between;">
+        {% for recipe in recipes %}
+        <div class="col-12 col-md-6 col-lg-3 recipe-read" style="box-shadow: rgba(0, 0, 0, 35%) 0px 5px 15px;">
+            <img class="recipe-img" src="{{ recipe.image_link }}" alt="{{ recipe.recipe_name }}" />
+            <div class="recipe-title">
+                <a href="{{ url_for('recipes', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a>
             </div>
-            {% endfor %}
         </div>
-        {% else %}
-        <div class="recipe-text">
-            <h2 class="recipe-header">No Result, try something else!</h2>
-        </div>
-        {% endif %}
+        {% endfor %}
     </div>
+    {% else %}
+    <div class="recipe-text">
+        <h2 class="recipe-header">No Result, try something else!</h2>
+    </div>
+    {% endif %}
 </div>
 
 {% endblock %}
