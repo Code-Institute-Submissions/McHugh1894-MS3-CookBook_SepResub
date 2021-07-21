@@ -7,7 +7,7 @@ This is a fictional recipe book website created for my milestone project 3.
 [LIVE DEPLOYMENT](https://ms3-cookbook-oisin.herokuapp.com/)
 
 ## Wireframes
-The completed wireframes for this project can be accesed by clicking [Wireframes](https://github.com/McHugh1894/MS3-COOKBOOK/tree/master/assets/images/readme-images/wireframes)
+The completed wireframes for this project can be accesed by clicking [Wireframes](https://github.com/McHugh1894/MS3-COOKBOOK/tree/master/static/images/readme-images/wireframes)
 
 ## Table of Contents
 
@@ -186,7 +186,7 @@ This site also has a feature to create your own account and post recipes.
 * [W3C HTML Validator](https://validator.w3.org/) - ALL HTML pages passed with no errors after corrections made.
 * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - CSS style sheet passed with no errors.
 * [JavaScript Validator](https://jshint.com/) - No errors found but warning.
-* [Python Validator](http://pep8online.com/) - Pass
+* [Python Validator](https://extendsclass.com/python-tester.html - Pass
 
 
 ### Compatibility Testing
