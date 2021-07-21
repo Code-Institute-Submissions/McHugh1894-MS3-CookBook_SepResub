@@ -72,6 +72,7 @@ def signup():
 
 # Users Login
 
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -154,8 +155,7 @@ def add_recipe():
             "total_time": request.form.get("total_time"),
             "ingredients": request.form.get("ingredients"),
             "directions": request.form.get("directions"),
-            
-            
+                        
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe is successfully added")
@@ -196,7 +196,7 @@ def edit_recipe(recipe_id):
         return render_template("error_handlers/404.html")
         
 
-#Show 404 page
+# Show 404 page
 
 
 # Delete Recipe From DB
@@ -206,6 +206,8 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("mypage"))
+
+
 def is_user_admin():
     if not session.get("user") == "admin@gmail.com":
         return False
@@ -277,7 +279,8 @@ def newsletter():
 
 # App Run
 if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"), port=int(os.environ.get("PORT")), debug=True)
+    app.run(host=os.environ.get("IP"), port=int(os.environ.get("PORT")), 
+    debug=False)
 
 
 
