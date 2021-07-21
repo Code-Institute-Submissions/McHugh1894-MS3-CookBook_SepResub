@@ -2,9 +2,7 @@
 
 ## Description
 
-this is a fictional recipe book website created for my milestone project 3.
-
-A modern styled website for a fictional recipe book that is fully equipped and standards with added classes and long opening hours. It's hope is to attract new members through an easy to use website.
+This is a fictional recipe book website created for my milestone project 3.
 
 ## Table of Contents
 
@@ -151,15 +149,15 @@ This site also has a feature to create your own account and post recipes.
 ### Frameworks, Libraries and Programs Used
 
   - [Bootstrap v4.5.0](https://getbootstrap.com/) - Used for the responsive layout as well as custom components such as header, footer, images, icons, grids, cards, and collapse element.
-  - [Font Awesome](https://fontawesome.com/) - Font Awesome is used to add social icons for socila links.
-  - [Google Fonts](https://fonts.google.com/) - Google Fonts is used to import 'Expo' and 'Cinzel'.
+  - [Font Awesome](https://fontawesome.com/) - Font Awesome is used to add social icons for social links.
+  - [Google Fonts](https://fonts.google.com/) - Google Fonts is used to import 'Roboto'.
   - [Git](https://git-scm.com/) - Git is used to allow for tracking of any changes in the code and for the version control.
   - [GitPod](https://www.gitpod.io/) - GitPod, connected to GitHub, hosted the coding space and allowed the project to be committed to the Github repository.
   - [Github](https://github.com/) - GitHub is used to host the project files and publish the live website by using Git Pages.
-  - [Heroku](https://www.heroku.com/) - Heroku is the cloud platform to deploying the app.
+  - [Heroku](https://www.heroku.com/) - Heroku is the cloud platform used to deploy the app.
   - [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Flask is the web framework for the app.
-  - [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) - Jinja is used for Python template.
-  - [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) - Werkzeug is used for password hashing and authentication and autohorization.
+  - [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) - Jinja is used for the Python template.
+  - [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) - Werkzeug is used for password hashing , authentication and autohorization.
 
 ### Database
 
@@ -182,7 +180,7 @@ This site also has a feature to create your own account and post recipes.
 
 * [W3C HTML Validator](https://validator.w3.org/) - ALL HTML pages passed with no errors after corrections made.
 * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - CSS style sheet passed with no errors.
-* [JavaScript Validator](https://jshint.com/) - No error found but warning.
+* [JavaScript Validator](https://jshint.com/) - No errors found but warning.
 * [Python Validator](http://pep8online.com/) - Pass
 
 
