@@ -193,7 +193,11 @@ This site also has a feature to create your own account and post recipes.
 
 ### Speed Testing
 
-Placeholder text ----
+I chose to run all my pages through [GT Metrix - Speed test](https://gtmetrix.com//) to get a view of the page load speeds.
+
+<img src="static/images/readme-images/contact-page-performance.png">
+
+<img src="static/images/readme-images/login-page-performance.png">
 
 ## Deployment
 
@@ -238,4 +242,11 @@ Placeholder text ----
 
 ### Media :
 - Images used were taken from [UnSplash website](https://unsplash.com/) and [Davey Nutrition](https://www.daveynutrition.com/)
+
+## Credits
+
+* Credits go to my mentor Akshat Garg and the Codeinstitute/slack group for the help with this project
+
+### Credited Code  
+* [Bootstrap](https://getbootstrap.com/) - Documents used for support with bootstrap classes.
 
