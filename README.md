@@ -4,6 +4,8 @@
 
 This is a fictional recipe book website created for my milestone project 3.
 
+[LIVE DEPLOYMENT](https://ms3-cookbook-oisin.herokuapp.com/)
+
 ## Table of Contents
 
 [User Experience (UX)](#UX)
@@ -249,4 +251,5 @@ I chose to run all my pages through [GT Metrix - Speed test](https://gtmetrix.co
 
 ### Credited Code  
 * [Bootstrap](https://getbootstrap.com/) - Documents used for support with bootstrap classes.
+* [W3Schools](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp) - Code used for top button.
 
