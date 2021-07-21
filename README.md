@@ -27,6 +27,8 @@ A modern styled website for a fictional recipe book that is fully equipped and s
 <a name="UX"></a>
 ## User Experience (UX)
 
+<img src="static/images/readme-images/ux-image.png">
+
 ### User Stories
 
 This website gives information about different recipes with cooking methods posted by the website owner and other users. 
