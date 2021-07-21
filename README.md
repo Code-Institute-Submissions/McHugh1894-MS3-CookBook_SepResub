@@ -247,6 +247,7 @@ I chose to run all my pages through [GT Metrix - Speed test](https://gtmetrix.co
 
 ### Media :
 - Images used were taken from [UnSplash website](https://unsplash.com/) and [Davey Nutrition](https://www.daveynutrition.com/)
+- GIF for home page taken from [GIPHY] (https://giphy.com/gifs/Shakastrong-vegan-veggies-meal-prep-3IQ0wimBnJ9SccyJpS/links)
 
 ## Credits
 

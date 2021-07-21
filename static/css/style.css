@@ -68,55 +68,60 @@ body {
   overflow: hidden;
 }
 
-.recipe-header-home{
-  background-color: rgb(245, 245, 234, 0.8);
-  color:black;
-  font-size: 30px;
+/* jumbotron */
+.jumbotron {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.jumbotron h1 {
+  color: #ffffff;
   font-weight: bold;
-  padding: 10px;
-  border-radius: 50px;
-  align-items: center;
+  font-size: 3rem;
+  font-family: "Roboto";
+}
+
+.h1,
+h1 {
+  font-size: 2rem;
+}
+
+.heading-position {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.heading {
+  color: #ffffff;
   text-align: center;
-  width: 100%;
-  padding: 10px;
-  text-shadow: 10px 10px 20px #fafafa;
-  align-items: center;
+}
+
+#gif {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* styling of button to enter mainsite from landing page */
+.mainsite-button {
   text-align: center;
 }
 
-.column {
-  width: 25%;
-  padding: 0 10px;
-}
-
-/* Remove extra left and right margins, due to padding in columns */
-.row {
-  margin: 0 -5px;
-  justify-content: center;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the counter cards */
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  text-align: center;
-  background-color: #f1f1f1;
-}
-
-/* Responsive columns - one column layout (vertical) on small screens */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
+.mainsite-button a {
+  color: #ffffff;
+  background-color: rgba(0, 0, 128);
+  margin-top: 10px;
+  font-size: 22px;
 }
 
 /*Footer*/
@@ -263,7 +268,7 @@ h2 {
   height: 300px;
   object-fit: cover;
   align-items: center;
-  padding-top: 10px;
+  overflow: hidden;
 }
 .recipe-title {
   color: black;
@@ -281,6 +286,8 @@ h2 {
   align-items: center;
   border-radius: 20px;
   margin: 20px;
+  padding: 0;
+  overflow: hidden;
 }
 .recipe-title {
   font-size: 15px;
