@@ -1,5 +1,4 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <div class="container-fluid container-signup img-fluid">
     <div class="row">
@@ -9,14 +8,12 @@
                     <h2>Sign Up!</h2>
                     <div class="form-group row">
                         <div class="col-sm-12">
-                            <input type="email" name="username" class="form-control" id="inputEmail3"
-                                placeholder="Email Address" required />
+                            <input type="email" name="username" class="form-control" id="inputEmail3" placeholder="Email Address" required />
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-12">
-                            <input type="password" name="password" class="form-control" id="inputPassword2"
-                                placeholder="Password" required />
+                            <input type="password" name="password" class="form-control" id="inputPassword2" placeholder="Password" required />
                         </div>
                     </div>
                     <div class="form-group row">
@@ -25,9 +22,12 @@
                         </div>
                     </div>
                     <div>
-                        <span><small>Already Registered! </small></span><span><a href="{{url_for ('login') }}">
+                        <span><small>Already Registered! </small></span>
+                        <span>
+                            <a href="{{url_for ('login') }}">
                                 Sign In!
-                            </a></span>
+                            </a>
+                        </span>
                     </div>
                 </form>
             </section>

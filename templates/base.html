@@ -1,180 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
-    <!--jQuery, Popper.js, and Bootstrap JS-->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-        </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-        </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-        </script>
-    <!--Font awesome-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+        <!--jQuery, Popper.js, and Bootstrap JS-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <!--Font awesome-->
         <script src="https://kit.fontawesome.com/449fb42052.js" crossorigin="anonymous"></script>
-    <!--hover.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
-        type="text/css" />
-    <!--font family-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
-    <!--CSS File-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    <!--Favicon link-->
-    <link rel="apple-touch-icon" sizes="180x180" href="static/logo/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="static/logo/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/logo/favicon-16x16.png">
-    <link rel="manifest" href="static/logo/site.webmanifest">
-    <!--emailjs-->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
-    </script>
-    <script>
+        <!--hover.css-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
+        <!--font family-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
+        <!--CSS File-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
+        <!--Favicon link-->
+        <link rel="apple-touch-icon" sizes="180x180" href="static/logo/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="static/logo/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="static/logo/favicon-16x16.png" />
+        <link rel="manifest" href="static/logo/site.webmanifest" />
+        <!--emailjs-->
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+        <script>
+            (function () {
+                emailjs.init("user_HB4HzQzv7UDZdJ7tUoKjZ");
+            })();
+        </script>
+        {% block styles %} {% endblock %}
+        <title>My Cook Book</title>
+    </head>
 
-(function () {
-            emailjs.init("user_HB4HzQzv7UDZdJ7tUoKjZ");
-        })();
-    </script>
-    {% block styles %}
-    {% endblock %}
-    <title>My Cook Book</title>
-</head>
+    <body>
+        <header>
+            <!--Navbar-->
+            <div class="container-fluid">
+                <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+                    <a href="{{url_for ('home') }}" class="navbar-brand active"><i class="fa fa-utensils list-inline-item" aria-hidden="true"></i>My Cook Book</a>
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Category
+                                </a>
+                                <!--Category Dropdown List-->
+                                <div class="dropdown-menu dropdown-bg" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item nav-link" href="{{ url_for('recipe', categories='All') }}">All</a>
+                                    <a class="dropdown-item nav-link" href="{{ url_for('recipe', categories='Breakfast') }}">Breakfast</a>
+                                    <a class="dropdown-item nav-link" href="{{ url_for('recipe', categories='Lunch') }}">Lunch</a>
+                                    <a class="dropdown-item nav-link" href="{{ url_for('recipe', categories='Dinner') }}">Dinner</a>
+                                    <a class="dropdown-item nav-link" href="{{ url_for('recipe', categories='Snacks') }}">Snacks</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for ('contact') }}">Contact</a>
+                            </li>
+                            {% if session.user %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for ('mypage') }}">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for ('add_recipe') }}">Add Recipe</a>
+                            </li>
+                            {% if session.user|lower == "admin@gmail.com"|lower %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('get_categories') }}">Manage Categories</a>
+                            </li>
+                            {% endif %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for ('logout') }}">Sign Out</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for ('login') }}">Sign In/Sign Up</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <!--Navbar-->
+        </header>
 
-<body>
-    <header>
-        <!--Navbar-->
-        <div class="container-fluid">
-            <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
-                <a href="{{url_for ('home') }}" class="navbar-brand active"><i class="fa fa-utensils list-inline-item"
-                        aria-hidden="true"></i>My Cook Book</a>
-                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href=""
-                                id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                Category
+        <section>
+            <!-- Flash Messages -->
+            {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+            <div class="recipe-text">
+                <h4 class="recipe-header">{{ message }}</h4>
+            </div>
+            {% endfor %} {% endif %} {% endwith %}
+        </section>
+
+        <main class="page-content">
+            {% block content %} {% endblock %}
+        </main>
+
+        <!--Footer-->
+        <footer class="footer footer-div mt-auto container-fluid">
+            <div id="footer-details" class="row">
+                <!--Copyright-->
+                <div class="col-sm-6">
+                    <h5 class="uppercase general-sub"><i class="fa fa-copyright list-inline-item" aria-hidden="true"></i> 2021</h5>
+                </div>
+                <!--Social Links-->
+                <div class="col-sm-6">
+                    <ul class="list-inline social-links">
+                        <li class="list-inline-item">
+                            <a target="_blank" rel="noopener" href="https://www.facebook.com">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                <span class="sr-only">Facebook</span>
                             </a>
-                            <!--Category Dropdown List-->
-                            <div class="dropdown-menu dropdown-bg" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item nav-link"
-                                    href="{{ url_for('recipe', categories='All') }}">All</a>
-                                <a class="dropdown-item nav-link"
-                                    href="{{ url_for('recipe', categories='Breakfast') }}">Breakfast</a>
-                                <a class="dropdown-item nav-link"
-                                    href="{{ url_for('recipe', categories='Lunch') }}">Lunch</a>
-                                <a class="dropdown-item nav-link"
-                                    href="{{ url_for('recipe', categories='Dinner') }}">Dinner</a>
-                                <a class="dropdown-item nav-link"
-                                    href="{{ url_for('recipe', categories='Snacks') }}">Snacks</a>
-                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="{{url_for ('contact') }}">Contact</a>
+                        <li class="list-inline-item">
+                            <a target="_blank" rel="noopener" href="https://www.twitter.com">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                <span class="sr-only">Twitter</span>
+                            </a>
                         </li>
-                        {% if session.user %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url_for ('mypage') }}">Profile</a>
+                        <li class="list-inline-item">
+                            <a target="_blank" rel="noopener" href="https://www.instagram.com">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                                <span class="sr-only">Instagram</span>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url_for ('add_recipe') }}">Add Recipe</a>
+                        <li class="list-inline-item">
+                            <a target="_blank" rel="noopener" href="https://www.youtube.com">
+                                <i class="fa fa-youtube" aria-hidden="true"></i>
+                                <span class="sr-only">YouTube</span>
+                            </a>
                         </li>
-                        {% if session.user|lower == "admin@gmail.com"|lower %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('get_categories') }}">Manage Categories</a></li>
-                        {% endif %}
-                        <li class="nav-item">
-                            <a class="nav-link " href="{{url_for ('logout') }}">Sign Out</a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link " href="{{url_for ('login') }}">Sign In/Sign Up</a>
-                        </li>
-                        {% endif %}
                     </ul>
                 </div>
-            </nav>
-        </div>
-        <!--Navbar-->
-    </header>
-
-    <section>
-        <!-- Flash Messages -->
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        {% for message in messages %}
-        <div class="recipe-text">
-            <h4 class="recipe-header">{{ message }}</h4>
-        </div>
-        {% endfor %}
-        {% endif %}
-        {% endwith %}
-    </section>
-
-    <main class="page-content">
-        {% block content %}
-        {% endblock %}
-    </main>
-
-    <!--Footer-->
-    <footer class="footer footer-div mt-auto container-fluid">
-        <div id="footer-details" class="row">
-            <!--Copyright-->
-            <div class="col-sm-6">
-                <h5 class="uppercase general-sub"> <i class="fa fa-copyright list-inline-item"
-                        aria-hidden="true"></i> 2021</h5>
             </div>
-            <!--Social Links-->
-            <div class="col-sm-6">
-                <ul class="list-inline social-links">
-                    <li class="list-inline-item">
-                        <a target="_blank" rel="noopener" href="https://www.facebook.com">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                            <span class="sr-only">Facebook</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a target="_blank" rel="noopener" href="https://www.twitter.com">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                            <span class="sr-only">Twitter</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a target="_blank" rel="noopener" href="https://www.instagram.com">
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                            <span class="sr-only">Instagram</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a target="_blank" rel="noopener" href="https://www.youtube.com">
-                            <i class="fa fa-youtube" aria-hidden="true"></i>
-                            <span class="sr-only">YouTube</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-    <!--footer-->
+        </footer>
+        <!--footer-->
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!--Script For Emailjs-->    
-    <script src="{{ url_for('static', filename='js/sendEmail.js') }}"></script>
-    <!--Script For Back to Top Button-->
-    <script src="{{ url_for('static', filename='js/top-button.js') }}"></script>
-    {% block scripts %}
-    {% endblock %}
-</body>
-
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <!--Script For Emailjs-->
+        <script src="{{ url_for('static', filename='js/sendEmail.js') }}"></script>
+        <!--Script For Back to Top Button-->
+        <script src="{{ url_for('static', filename='js/top-button.js') }}"></script>
+        {% block scripts %} {% endblock %}
+    </body>
 </html>
