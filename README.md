@@ -6,6 +6,9 @@ This is a fictional recipe book website created for my milestone project 3.
 
 [LIVE DEPLOYMENT](https://ms3-cookbook-oisin.herokuapp.com/)
 
+## Wireframes
+The completed wireframes for this project can be accesed by clicking [Wireframes](https://github.com/McHugh1894/MS3-COOKBOOK/tree/master/assets/images/readme-images/wireframes)
+
 ## Table of Contents
 
 [User Experience (UX)](#UX)
