@@ -167,6 +167,11 @@ This site also has a feature to create your own account and post recipes.
 ### Database
 
   - [MongoDB](https://www.mongodb.com/) - MongoDB is the fully managed cloud database service used for the project.
+  - The project has three collections in the database. All fields are string data type.The database structure in MongoDB is as follows.
+
+  <img src="static/images/readme-images/mongo-db.png">
+
+
 
   ## Testing
 
