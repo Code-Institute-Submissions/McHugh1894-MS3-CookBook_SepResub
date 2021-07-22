@@ -4,7 +4,7 @@
     <!--Page Heading-->
     <div class="row">
         <div class="col-12 profile-header">
-            <h2>My Page!</h2>
+            <h2>Profile</h2>
         </div>
     </div>
     <!--Add Recipe Button-->
@@ -20,10 +20,10 @@
                 <h3 class="recipe-header">Recipes</h3>
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="justify-content: center;">
             {% for recipe in user_recipes %}
-            <div class="col-12 col-md-6 col-lg-4 recipe-read">
-                <img class="recipe-img" src="{{ recipe.image }}" alt="{{ recipe.recipe_name }}" />
+            <div class="col-12 col-md-6 col-lg-4 recipe-read" style="box-shadow: rgba(0, 0, 0, 35%) 0px 5px 15px;">
+                <img class="recipe-img" src="{{ recipe.image_link }}" alt="{{ recipe.recipe_name }}" />
                 <div class="recipe-title">
                     <a href="{{ url_for('recipes', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a>
                 </div>
