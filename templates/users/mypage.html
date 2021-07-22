@@ -22,7 +22,7 @@
         </div>
         <div class="row" style="justify-content: center;">
             {% for recipe in user_recipes %}
-            <div class="col-12 col-md-6 col-lg-4 recipe-read" style="box-shadow: rgba(0, 0, 0, 35%) 0px 5px 15px;">
+            <div class="col-12 col-md-6 col-lg-4 recipe-read" style="box-shadow: rgba(0, 0, 0, 35%) 0px 5px 15px; justify-content: center;">
                 <img class="recipe-img" src="{{ recipe.image_link }}" alt="{{ recipe.recipe_name }}" />
                 <div class="recipe-title">
                     <a href="{{ url_for('recipes', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a>

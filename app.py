@@ -208,16 +208,16 @@ def delete_recipe(recipe_id):
 
 def is_user_admin():
     if not session.get("user") == "admin@gmail.com":
-        return False
-    else:
         return True
+    else:
+        return False
 
 
 # Get Category from DB
 @app.route("/categories")
 def get_categories():
     if is_user_admin():
-        return render_template("error_handlers/403.html")
+        return render_template("category/categories.html")
     categories = list(mongo.db.recipe_categories.find())
     return render_template("category/categories.html", categories=categories)
 
@@ -239,7 +239,7 @@ def add_category():
 @app.route("/category/<category_id>/edit", methods=["GET", "POST"])
 def edit_category(category_id):
     if is_user_admin():
-        return render_template("error_handlers/403.html")
+        return render_template("category/categories.html")
     if request.method == "POST":
         submit = {"category_name": request.form.get("category_name")}
         mongo.db.recipe_categories.update({"_id": ObjectId(category_id)}, submit)
