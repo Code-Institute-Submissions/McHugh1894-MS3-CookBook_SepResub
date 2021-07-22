@@ -49,20 +49,18 @@ def search():
 
 
 # User SignUp
+
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
-    if session["user"]:
-        return redirect(url_for("home"))
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()}
-        )
+            {"username": request.form.get("username").lower()})
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("signup"))
         signup = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password")),
+            "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(signup)
         session["user"] = request.form.get("username").lower()
@@ -280,7 +278,7 @@ def newsletter():
 # App Run
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), port=int(os.environ.get("PORT")), 
-    debug=False)
+    debug=True)
 
 
 
