@@ -23,8 +23,6 @@ The completed wireframes for this project can be accesed by clicking [Wireframes
 
 [Deployment](#deployment)
 
-[Known Bugs](#bugs)
-
 [Credits](#credits)
 
 <a name="UX"></a>
