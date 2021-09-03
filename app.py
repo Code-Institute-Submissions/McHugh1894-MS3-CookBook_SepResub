@@ -143,16 +143,21 @@ def add_recipe():
         return render_template("error_handlers/404.html")
     if request.method == "POST":
         recipe = {
-            "category_name": request.form.get("category_name"),
+           "category_name": request.form.get("category_name"),
+            "recipe_category": request.form.get("recipe_category"),
             "recipe_name": request.form.get("recipe_name"),
-            "chef": request.form.get("chef"),
-            "image": request.form.get("image"),
-            "serving": request.form.get("serving"),
+            "description": request.form.get("description"),
+            "image_link": request.form.get("image_link"),
+            "servings": request.form.get("servings"),
             "prep_time": request.form.get("prep_time"),
             "cook_time": request.form.get("cook_time"),
-            "total_time": request.form.get("total_time"),
+            "calories": request.form.get("calories"),
+            "carbs": request.form.get("carbs"),
+            "protein": request.form.get("protein"),
+            "fat": request.form.get("fat"),
             "ingredients": request.form.get("ingredients"),
-            "directions": request.form.get("directions"),
+            "method": request.form.get("method"),
+            "username": session["user"]
                         
         }
         mongo.db.recipes.insert_one(recipe)
@@ -170,15 +175,20 @@ def edit_recipe(recipe_id):
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
+            "recipe_category": request.form.get("recipe_category"),
             "recipe_name": request.form.get("recipe_name"),
-            "chef": request.form.get("chef"),
-            "image": request.form.get("image"),
-            "serving": request.form.get("serving"),
+            "description": request.form.get("description"),
+            "image_link": request.form.get("image_link"),
+            "servings": request.form.get("servings"),
             "prep_time": request.form.get("prep_time"),
             "cook_time": request.form.get("cook_time"),
-            "total_time": request.form.get("total_time"),
+            "calories": request.form.get("calories"),
+            "carbs": request.form.get("carbs"),
+            "protein": request.form.get("protein"),
+            "fat": request.form.get("fat"),
             "ingredients": request.form.get("ingredients"),
-            "directions": request.form.get("directions"),
+            "method": request.form.get("method"),
+            "username": session["user"]
             
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
@@ -186,11 +196,11 @@ def edit_recipe(recipe_id):
         return redirect(url_for("mypage", username=session["user"]))
     try:
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-        categories = mongo.db.categories.find().sort("category_name", 1)
+        categories = list(mongo.db.recipe_categories.find())
         return render_template(
             "recipe/edit_recipe.html", recipe=recipe, categories=categories
         )
-    except:
+    except Exception:
         return render_template("error_handlers/404.html")
         
 

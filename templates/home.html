@@ -30,7 +30,7 @@
                             </li>
                             {% if session.user %}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{url_for ('mypage') }}">My Page</a>
+                                <a class="nav-link" href="{{url_for ('mypage') }}">Profile</a>
                             </li>
                             {% if session.user|lower == "admin@gmail.com"|lower %}
                             <li class="nav-item">
@@ -63,7 +63,7 @@
                 <!-- enter button to access website -->
                 <img id="gif" alt="gif" src="https://media.giphy.com/media/3IQ0wimBnJ9SccyJpS/giphy.gif" />
                 <div class="mainsite-button">
-                    <a href="{{url_for ('recipe') }}" class="button btn btn-success btn-lg">Enter</a>
+                    <a href="{{url_for ('recipe') }}" class="button btn btn-success btn-lg">Recipes</a>
                 </div>
             </div>
             </div>

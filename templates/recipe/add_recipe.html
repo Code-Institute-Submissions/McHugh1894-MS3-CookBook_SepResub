@@ -17,7 +17,7 @@
                                 <option value="{{ category.recipe_category}}">{{ category.recipe_category}}</option>
                                 {% endfor %}
                             </select>
-                            <label for="category_name">Recipe category</label>
+                            <label for="category_name">Recipe Category</label>
                         </div>
                     </div>
                     <!--Recipe Description-->
@@ -28,16 +28,22 @@
                         </div>
                     </div>
                     <div class="row">
+                        <label for="recipe_category" class="form-label">Recipe Category</label>
+                        <div class="input-group mb-3">
+                            <input type="text" name="recipe_category" id="recipe_category"  class="form-control" placeholder="Recipe Category" aria-label="Recipe Category" aria-describedby="basic-addon1" />
+                        </div>
+                    </div>
+                    <div class="row">
                         <label for="image" class="form-label">Image URL</label>
                         <div class="input-group mb-3">
-                            <input type="text" name="image" class="form-control" id="image" aria-describedby="basic-addon3" />
+                            <input type="text" name="image_link" class="form-control" id="image" aria-describedby="basic-addon3" />
                             <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
                         </div>
                     </div>
                     <div class="row">
-                        <label for="serving" class="form-label">Serving</label>
+                        <label for="servings" class="form-label">Servings</label>
                         <div class="input-group mb-3">
-                            <input type="text" name="serving" id="serving" class="form-control" placeholder="Serving" aria-label="Serving" aria-describedby="basic-addon4" />
+                            <input type="text" name="servings" id="servings" class="form-control" placeholder="Serving" aria-label="Serving" aria-describedby="basic-addon4" />
                             <span class="input-group-text" id="basic-addon4">For Example: 2</span>
                         </div>
                     </div>
@@ -56,10 +62,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <label for="total_time" class="form-label">Total Time</label>
+                        <label for="calories" class="form-label">Calories</label>
                         <div class="input-group mb-3">
-                            <input type="text" name="total_time" id="total_time" class="form-control" placeholder="Total time" aria-label="Total Time" aria-describedby="basic-addon7" />
-                            <span class="input-group-text" id="basic-addon7">For Example: 20 mins.</span>
+                            <input type="text" name="calories" id="calories" class="form-control" placeholder="calories" aria-label="Calories" aria-describedby="basic-addon7" />
+                            <span class="input-group-text" id="basic-addon7">For Example: 400 Calories</span>
                         </div>
                     </div>
                     <div class="row">
@@ -70,10 +76,38 @@
                         </div>
                     </div>
                     <div class="row">
-                        <label for="directions" class="form-label">Directions</label>
+                        <label for="carbs" class="form-label">Carbs</label>
+                        <div class="input-group mb-3">
+                            <input type="text" name="carbs" id="carbs" class="form-control" placeholder="carbs" aria-label="carbs" aria-describedby="basic-addon7" />
+                            <span class="input-group-text" id="basic-addon7">For Example: 30g</span>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <label for="protein" class="form-label">Protein</label>
+                            <div class="input-group mb-3">
+                                <input type="text" name="protein" id="carbs" class="form-control" placeholder="protein" aria-label="protein" aria-describedby="basic-addon7" />
+                                <span class="input-group-text" id="basic-addon7">For Example: 20g</span>
+                            </div>
+                            </div>
+                    <div class="row">
+                        <label for="fat" class="form-label">Fat</label>
+                            <div class="input-group mb-3">
+                                <input type="text" name="fat" id="fat" class="form-control" placeholder="fat" aria-label="fat" aria-describedby="basic-addon7" />
+                                <span class="input-group-text" id="basic-addon7">For Example: 10g</span>
+                            </div>
+                            </div>
+                    <div class="row">
+                        <label for="method" class="form-label">Method</label>
                         <div class="input-group">
-                            <textarea class="form-control" name="directions" id="directions" aria-label="Directions"></textarea>
+                            <textarea class="form-control" name="method" id="method" aria-label="method"></textarea>
                             <span class="input-group-text">Write each step in new line.</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="description" class="form-label">Description</label>
+                        <div class="input-group mb-3">
+                            <input type="text" name="description" id="description" class="form-control" placeholder="description" aria-label="description" aria-describedby="basic-addon1" />
+                            <span class="input-group-text"></span>
                         </div>
                     </div>
                     <div class="row">
